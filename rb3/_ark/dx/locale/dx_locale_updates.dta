@@ -1,0 +1,5 @@
+(os_rb3dx "Quick RB-Patches\n RB3E Instrument Dupe Tests")
+
+;ALWAYS KEEP THIS LAST SO IT LOADS ON TOP OF EVERYTHING ELSE
+#include dx_locale_sources.dta
+#include dx_locale_sections.dta

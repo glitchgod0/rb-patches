@@ -142,3 +142,8 @@ Lightweight patches to vanilla RB games that add small quality-of-life improveme
 - Holiday DLC minifigures
 - Vocal practice mode
 - Compatible with the PS3 EU 1.0 debug build via patchcreator
+
+## RB3:
+- Faster scrolling
+- DX sources/Sections
+- Additional practice speeds
