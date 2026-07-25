@@ -24,6 +24,7 @@
    (trainer_from_main_menu kControllerNone)
    (song_data_mounted {$this refresh_top})
    (enter
+      {$this iterate UIList $l {$l set scroll_time 0}}  ; dx - instant scrolling
       {net_sync set_ui_state kNetUI_MusicLibrary}
       {set [should_go_to_art_maker] FALSE}
       {overshell add_sink $this}
