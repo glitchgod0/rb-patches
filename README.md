@@ -148,3 +148,5 @@ Lightweight patches to vanilla RB games that add small quality-of-life improveme
 - 1ms calibration increment
 - DX sources/Sections
 - Additional practice speeds
+- SELECT button restarts current practice section
+- Left/Right song select quick scroll

@@ -661,6 +661,28 @@
                      [reviews_dirty]
                      TRUE}}})
          ({&&
+            {== $action kAction_Left}
+            {!
+               {song.lst is_scrolling}}}
+         {unless
+            [waiting_for_sort]
+            {song.lst set_scroll_user $user}
+            {song.lst set_selected_simulate_scroll {- {song.lst selected_pos} 1}}
+            {set $pause_scroll_sound TRUE}
+            {song.lst set_selected_simulate_scroll {- {song.lst selected_pos} 9}}
+            {set $pause_scroll_sound FALSE}}) ; dx scroll the list up by 10 slots when pressing left dpad
+         ({&&
+            {== $action kAction_Right}
+            {!
+               {song.lst is_scrolling}}}
+         {unless
+            [waiting_for_sort]
+            {song.lst set_scroll_user $user}
+            {song.lst set_selected_simulate_scroll {+ {song.lst selected_pos} 1}}
+            {set $pause_scroll_sound TRUE}
+            {song.lst set_selected_simulate_scroll {+ {song.lst selected_pos} 9}}
+            {set $pause_scroll_sound FALSE}}) ; dx scroll the list down by 10 slots when pressing right dpad
+         ({&&
                {== $action kAction_PageDown}
                {!
                   {song.lst is_scrolling}}}
