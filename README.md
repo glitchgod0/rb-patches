@@ -143,7 +143,7 @@ Lightweight patches to vanilla RB games that add small quality-of-life improveme
 - Vocal practice mode
 - Compatible with the PS3 EU 1.0 debug build via patchcreator
 
-## RB3 (Only meant for RB3 testing):
+## RB3 (Only meant for RB3e testing):
 - Faster scrolling
 - 1ms calibration increment
 - DX sources/Sections
