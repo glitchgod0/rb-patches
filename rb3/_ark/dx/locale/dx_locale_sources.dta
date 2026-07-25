@@ -67,7 +67,7 @@
 
 ; Rock Band games
 (dlc "Rock Band 1/2 DLC")
-(rb1_dlc "Rock Band 1/2 DLC")  ; this has to be here for play a show
+(rb1_dlc "Rock Band 1/2 DLC") ; this has to be here for play a show
 (ugc1 "Rock Band Network 1.0")
 (rbtp_vol_1 "Track Pack Vol. 1")
 (rbtp_acdc "AC/DC Live Track Pack")
