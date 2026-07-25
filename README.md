@@ -145,5 +145,6 @@ Lightweight patches to vanilla RB games that add small quality-of-life improveme
 
 ## RB3:
 - Faster scrolling
+- 1ms calibration increment
 - DX sources/Sections
 - Additional practice speeds

@@ -194,14 +194,29 @@
    sel_speed_panel
    (file sel_speed.milo)
    (enter
+      {set $list_selected TRUE} ;reset below hack
+      {speeds.lst set scroll_time 0} ; dx - makes the scrolling for the speeds list faster
+      ; dx - add additional practice speeds
       {speeds.lst set_data
-         (practice_speed_0 practice_speed_1 practice_speed_2 practice_speed_3)
+         (
+            practice_speed_0 practice_speed_1 practice_speed_2 practice_speed_3
+            practice_speed_4 practice_speed_5 practice_speed_6 practice_speed_7
+            practice_speed_8 practice_speed_9 practice_speed_10 practice_speed_11
+            practice_speed_12 practice_speed_13 practice_speed_14 practice_speed_15
+            practice_speed_16 practice_speed_17 practice_speed_18
+         )
       }
    )
    (focus speeds.lst)
    (SELECT_MSG
-      {switch $component
-         (speeds.lst {gamecfg set practice_speed {speeds.lst selected_pos}})
+      ;HACK, this is stupid. block additional selection while waiting for delay
+      {if $list_selected
+         {switch $component
+            (speeds.lst
+               {gamecfg set practice_speed {speeds.lst selected_pos}}
+               {set $list_selected FALSE}
+            )
+         }
       }
       {session_mgr set_active_roster TRUE}
       {training_mgr unparticipate_users}
@@ -414,6 +429,11 @@
             {$this dec_speed}
             {dpad_left.trig trigger}
          }
+         ; dx - select to restart
+         {if {== $raw_button kPad_Select}
+            {session end_game kRestart}
+         }
+
       }
    )
    (inc_speed
@@ -425,7 +445,7 @@
    )
    (dec_speed
       {set $p_speed {gamecfg get practice_speed}}
-      {if {< $p_speed 3}
+      {if {< $p_speed 18}  ; dx - increase this to allow for more speeds
          {'++' $p_speed}
          {$this update_speed $p_speed}
       }
